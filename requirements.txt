@@ -1,0 +1,23 @@
+# COCO-OLAC Python deps (excluding torch / detectron2 / MSDeformAttn — see install_env.sh)
+
+# core
+cython
+scipy
+scikit-image
+shapely
+PyYAML
+
+# vision / image io
+Pillow
+opencv-python
+
+# backbones
+timm
+
+# COCO / panoptic evaluation
+pycocotools
+panopticapi
+
+# plotting (tools/tsne.py, tools/train_annotation_dist.py)
+matplotlib
+scikit-learn

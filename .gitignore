@@ -1,0 +1,62 @@
+# output dir
+/output
+/instant_test_output
+/inference_test_output
+
+
+*.png
+*.json
+*.diff
+*.jpg
+!assets/*.png
+!occlusion_label_*.json
+
+# compilation and distribution
+__pycache__
+_ext
+*.pyc
+*.pyd
+*.so
+*.dll
+*.egg-info/
+build/
+dist/
+wheels/
+
+# pytorch/python/numpy formats
+*.pth
+*.pkl
+*.pt
+*.safetensors
+*.npy
+*.ts
+model_ts*.txt
+*.pdf
+
+# shell scripts: block by default, allow only those we ship
+*.sh
+!mask2former/modeling/pixel_decoder/ops/make.sh
+!scripts/*.sh
+
+# ipython/jupyter notebooks
+*.ipynb
+**/.ipynb_checkpoints/
+
+# Editor temporaries
+*.swn
+*.swo
+*.swp
+*~
+
+# editor settings
+.idea
+.vscode
+.claude
+
+# project dirs
+/detectron2/model_zoo/configs
+/datasets/data
+/model_zoo
+/models
+/snippet
+/notes

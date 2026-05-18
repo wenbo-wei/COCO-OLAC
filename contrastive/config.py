@@ -1,0 +1,13 @@
+from detectron2.config import CfgNode as CN
+
+
+def add_contrastive_config(cfg):
+    cfg.CONTRASTIVE = CN()
+    cfg.CONTRASTIVE.ON = True
+    cfg.CONTRASTIVE.CONTRASTIVE_WEIGHT = 1.0
+    cfg.CONTRASTIVE.EMBEDDING_LAYER = 'res5'
+    cfg.CONTRASTIVE.IGNORE_OCCLUSION_LABEL = None
+    cfg.CONTRASTIVE.OUTER_THRESHOLD = 0.4
+    cfg.CONTRASTIVE.INNER_THRESHOLD_ON = True
+    cfg.CONTRASTIVE.INNER_OCCLUSION_LABEL = 1
+    cfg.CONTRASTIVE.INNER_THRESHOLD = 0.6
