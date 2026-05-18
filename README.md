@@ -1,10 +1,6 @@
 # COCO-OLAC: A Benchmark for Occluded Panoptic Segmentation and Image Understanding
 
-**ICASSP 2025** &middot; [Wenbo Wei](https://github.com/wenbo-wei)\*, [Jun Wang](https://github.com/Markin-Wang)\*, [Abhir Bhalerao](https://scholar.google.com/citations?hl=en&user=XfBoSP4AAAAJ)
-
-Department of Computer Science, University of Warwick, UK
-
-<sub>\*Equal contribution.</sub>
+[Wenbo Wei](https://github.com/wenbo-wei), [Jun Wang](https://github.com/Markin-Wang), [Abhir Bhalerao](https://scholar.google.com/citations?hl=en&user=XfBoSP4AAAAJ)
 
 > **TL;DR.** COCO-OLAC is a re-annotation of COCO with manual *low / mid / high* occlusion-level labels — **30,000 training images and 5,000 validation images** — enabling occlusion-aware evaluation of panoptic segmentation and other image-understanding methods. We additionally provide a contrastive-learning baseline that leverages the new labels.
 
