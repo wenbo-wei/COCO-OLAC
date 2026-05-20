@@ -197,6 +197,6 @@ We thank the authors of these works for releasing their code and data.
 
 ## License
 
-Code: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Annotations: released under the same license as the underlying COCO images (Creative Commons Attribution 4.0). <!-- TODO: confirm CC-BY-4.0 is the intended license for the new labels -->
