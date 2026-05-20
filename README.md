@@ -2,8 +2,6 @@
 
 [Wenbo Wei](https://github.com/wenbo-wei), [Jun Wang](https://github.com/Markin-Wang), [Abhir Bhalerao](https://scholar.google.com/citations?hl=en&user=XfBoSP4AAAAJ)
 
-> **TL;DR.** COCO-OLAC is a re-annotation of COCO with manual *low / mid / high* occlusion-level labels — **30,000 training images and 5,000 validation images** — enabling occlusion-aware evaluation of panoptic segmentation and other image-understanding methods. We additionally provide a contrastive-learning baseline that leverages the new labels.
-
 ## Highlights
 
 - **Dataset, not just a method.** COCO-OLAC is released as a benchmark — the labels, splits, and evaluation protocol are the primary deliverable.
