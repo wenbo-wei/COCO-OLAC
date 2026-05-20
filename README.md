@@ -14,10 +14,10 @@
 
 | Split          | Total  | Low   | Mid    | High   |
 |:---------------|:------:|:-----:|:------:|:------:|
-| Train (subset of COCO `train2017`, first 30k images) | 30,000 | 6,668 | 11,251 | 12,081 |
+| Train (first 30k images of COCO `train2017`) | 30,000 | 6,668 | 11,251 | 12,081 |
 | Val   (full COCO `val2017`)                          | 5,000  | 1,134 | 2,075  | 1,791  |
 
-The validation set is also pre-split into three per-level subsets so a model can be evaluated separately on low / mid / high occlusion images (see [Benchmark Protocol](#benchmark-protocol)).
+The validation set is also pre-split into three per-level subsets so a model can be evaluated separately on low / mid / high occlusion images.
 
 ## Download
 
@@ -80,7 +80,7 @@ datasets/data/
 The validation set is split by occlusion level. Each model is reported on:
 
 - **Full val** (5,000 images) — overall metric
-- **Val-Low** (1,134), **Val-Mid** (2,075), **Val-High** (1,791) — per-level diagnostic
+- **Val-Low** (1,134), **Val-Mid** (2,075), **Val-High** (1,791)
 
 ### Metrics
 
