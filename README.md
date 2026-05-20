@@ -10,13 +10,6 @@
 - **Benchmarked under SOTA panoptic methods** (Panoptic FPN/FCN/DeepLab, MaskFormer, Mask2Former, Mask DINO), exposing a clear performance drop as occlusion rises.
 - **Reference implementation** of an occlusion-aware contrastive-learning baseline included.
 
-## Dataset Examples
-
-<!-- TODO: convert the 3×3 occlusion sample grid (paper Fig.2) to PNG and drop at assets/dataset_samples.png -->
-<!-- <p align="center"><img src="assets/dataset_samples.png" width="700" alt="Examples per occlusion level"></p> -->
-
-Sample images per occlusion level (paper Fig. 2) will be added at `assets/dataset_samples.png`. Each column shows images at low / mid / high occlusion level respectively.
-
 ## Statistics
 
 | Split          | Total  | Low   | Mid    | High   |
