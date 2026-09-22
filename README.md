@@ -54,7 +54,7 @@ To help address the occlusion problem in panoptic segmentation and image underst
 
 ## Download
 
-**Occlusion-level annotations** are distributed directly in this repository at the project root:
+**Occlusion-level annotations** are available as [GitHub Release assets](https://github.com/wenbo-wei/COCO-OLAC/releases/tag/annotations-v1.0). Download the five JSON files below into `datasets/data/coco_olac/`:
 
 | File | Size | Download |
 |:-----|:----:|:--------:|
