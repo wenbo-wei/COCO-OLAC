@@ -21,9 +21,6 @@
 - [Annotation Format](#annotation-format)
 - [Data Preparation](#data-preparation)
 - [Leaderboard](#leaderboard)
-- [Installation](#installation)
-- [Training](#training)
-- [Evaluation](#evaluation)
 - [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -107,40 +104,14 @@ Each method is evaluated using its **official pre-trained weights** on the per-l
 
 | Method            | Occlusion        | PQ                 | PQ<sup>Th</sup>    | PQ<sup>St</sup>    | AP<sub>pan</sub><sup>Th</sup> | mIoU<sub>pan</sub> |
 |:------------------|:----------------:|:------------------:|:------------------:|:------------------:|:-----------------------------:|:------------------:|
-| Panoptic FPN      | l/m/h            | 43.8 / 40.2 / 34.5 | 53.2 / 47.3 / 39.0 | 29.5 / 29.5 / 27.7 | —                             | —                  |
-| Panoptic FCN      | l/m/h            | 46.9 / 44.9 / 36.3 | 56.1 / 48.2 / 40.4 | 33.3 / 32.5 / 30.1 | —                             | —                  |
-| Panoptic DeepLab  | l/m/h            | 42.9 / 36.2 / 30.0 | 47.8 / 39.4 / 31.0 | 35.5 / 31.3 / 29.2 | —                             | —                  |
-| MaskFormer        | l/m/h            | 52.6 / 48.0 / 41.2 | 58.3 / 53.9 / 44.0 | 43.3 / 39.1 / 37.0 | —                             | —                  |
-| Mask2Former       | l/m/h            | 56.8 / 53.3 / 46.7 | 64.4 / 60.1 / 51.3 | 45.8 / 43.0 / 39.7 | 56.5 / 45.1 / 35.8            | 60.4 / 61.2 / 58.1 |
-| Mask DINO         | l/m/h            | 56.6 / 53.7 / 48.3 | 63.1 / 60.6 / 53.3 | 47.0 / 43.4 / 40.8 | 56.4 / 47.2 / 38.8            | 58.0 / 59.7 / 57.4 |
+| Panoptic FPN      | l/m/h            | 43.8&nbsp;/&nbsp;40.2&nbsp;/&nbsp;34.5 | 53.2&nbsp;/&nbsp;47.3&nbsp;/&nbsp;39.0 | 29.5&nbsp;/&nbsp;29.5&nbsp;/&nbsp;27.7 | —                             | —                  |
+| Panoptic FCN      | l/m/h            | 46.9&nbsp;/&nbsp;44.9&nbsp;/&nbsp;36.3 | 56.1&nbsp;/&nbsp;48.2&nbsp;/&nbsp;40.4 | 33.3&nbsp;/&nbsp;32.5&nbsp;/&nbsp;30.1 | —                             | —                  |
+| Panoptic DeepLab  | l/m/h            | 42.9&nbsp;/&nbsp;36.2&nbsp;/&nbsp;30.0 | 47.8&nbsp;/&nbsp;39.4&nbsp;/&nbsp;31.0 | 35.5&nbsp;/&nbsp;31.3&nbsp;/&nbsp;29.2 | —                             | —                  |
+| MaskFormer        | l/m/h            | 52.6&nbsp;/&nbsp;48.0&nbsp;/&nbsp;41.2 | 58.3&nbsp;/&nbsp;53.9&nbsp;/&nbsp;44.0 | 43.3&nbsp;/&nbsp;39.1&nbsp;/&nbsp;37.0 | —                             | —                  |
+| Mask2Former       | l/m/h            | 56.8&nbsp;/&nbsp;53.3&nbsp;/&nbsp;46.7 | 64.4&nbsp;/&nbsp;60.1&nbsp;/&nbsp;51.3 | 45.8&nbsp;/&nbsp;43.0&nbsp;/&nbsp;39.7 | 56.5&nbsp;/&nbsp;45.1&nbsp;/&nbsp;35.8            | 60.4&nbsp;/&nbsp;61.2&nbsp;/&nbsp;58.1 |
+| Mask DINO         | l/m/h            | 56.6&nbsp;/&nbsp;53.7&nbsp;/&nbsp;48.3 | 63.1&nbsp;/&nbsp;60.6&nbsp;/&nbsp;53.3 | 47.0&nbsp;/&nbsp;43.4&nbsp;/&nbsp;40.8 | 56.4&nbsp;/&nbsp;47.2&nbsp;/&nbsp;38.8            | 58.0&nbsp;/&nbsp;59.7&nbsp;/&nbsp;57.4 |
 
 **Note:** `l`, `m`, and `h` denote low, mid, and high occlusion levels, respectively.
-
-## Installation
-
-The implementation builds on **Mask2Former** (Meta, MIT) and **detectron2**. Please follow the upstream [Mask2Former installation guide](https://github.com/facebookresearch/Mask2Former/blob/main/INSTALL.md) for the heavy dependencies (PyTorch, detectron2, the MSDeformAttn CUDA operator), and then install the remaining requirements:
-
-```bash
-pip install -r requirements.txt
-```
-
-<!-- TODO: write install_env.sh once env is pinned -->
-
-## Training
-
-```bash
-bash scripts/train_conocc_olac_r50.sh
-```
-
-This launches `train_net.py` with `configs/coco_olac/panoptic-segmentation/maskformer2_R50_bs16_50ep.yaml` and the contrastive hyper-parameters specified in the paper (margins τ<sub>l,h</sub>=0.4, τ<sub>m</sub>=0.6, λ=1.0).
-
-## Evaluation
-
-```bash
-bash scripts/eval_conocc_olac_r50.sh
-```
-
-By default the script expects the checkpoint at `output/coco_olac/res50/con/model_final.pth`; the path may be overridden via `MODEL.WEIGHTS <path>`.
 
 ## Citation
 
@@ -172,6 +143,8 @@ We thank the authors of these works for releasing their code and data.
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<p align="center">
+The code in this repository is released under <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>.
+</p>
 
-The code in this repository is released under the **MIT license**. The newly introduced occlusion-level annotations are released under **CC-BY 4.0**, consistent with the underlying COCO images. <!-- TODO: confirm CC-BY-4.0 is the intended license for the new labels -->
+The newly introduced occlusion-level annotations are released under **CC-BY 4.0**, consistent with the underlying COCO images. <!-- TODO: confirm CC-BY-4.0 is the intended license for the new labels -->
