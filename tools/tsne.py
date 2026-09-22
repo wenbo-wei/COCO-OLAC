@@ -5,8 +5,8 @@ from sklearn.manifold import TSNE
 from sklearn.preprocessing import StandardScaler
 
 # 读取特征文件
-# data = torch.load('/home/wenbo/data/projects/Mask2Former_ConOcc/feature_map_no.pth')
-data = torch.load('/home/wenbo/data/projects/Mask2Former_ConOcc/feature_map.pth')
+# data = torch.load('/home/wenbo/data/projects/COCO-OLAC/feature_map_no.pth')
+data = torch.load('/home/wenbo/data/projects/COCO-OLAC/feature_map.pth')
 
 features = torch.cat([f.view(1, -1) for f in data['features']], dim=0).cpu().numpy()
 labels = np.array(data['occlusion_label'])

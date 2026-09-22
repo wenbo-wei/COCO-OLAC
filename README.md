@@ -91,13 +91,18 @@ Place the data under `datasets/data/`:
 ```
 datasets/data/
 └── coco_olac/
-    ├── train2017/                                 # first 30k images of COCO train2017
-    ├── val2017/                                   # full COCO val2017
+    ├── train/                                    # first 30k images of COCO train2017
+    ├── val/, val_low/, val_mid/, val_high/        # full validation set and per-level subsets
+    ├── panoptic_{train,val,val_low,val_mid,val_high}/
+    ├── panoptic_semseg_{train,val,val_low,val_mid,val_high}/
     ├── annotations/
-    │   ├── panoptic_train2017.json, panoptic_val2017.json
-    │   └── panoptic_{train,val}2017/              # PNG panoptic masks
-    └── occlusion_label_{train,val}.json
+    │   ├── instances_{train,val,val_low,val_mid,val_high}.json
+    │   └── panoptic_{train,val,val_low,val_mid,val_high}.json
+    └── occlusion_label_{train,val,val_low,val_mid,val_high}.json
 ```
+
+The split image and mask directories share one dataset root; all instance and
+panoptic JSONs share `annotations/`. Braces denote separate names.
 
 ### Evaluation splits
 

@@ -126,7 +126,7 @@ class MaskFormer(nn.Module):
                                                   self.inner_threshold_on, self.inner_occlusion_label,
                                                   self.inner_threshold, self.outer_threshold, self.device)
 
-        occlusion_label_val = '/home/wenbo/data/datasets/coco_olac/val/occlusion_label_val.json'
+        occlusion_label_val = '/home/wenbo/data/datasets/coco_olac/occlusion_label_val.json'
         self.occlusion_label_val_dict = json.load(open(occlusion_label_val, 'r'))
     @classmethod
     def from_config(cls, cfg):
@@ -251,7 +251,7 @@ class MaskFormer(nn.Module):
         # self.feature_pth['occlusion_label'].append(occlusion_label)
 
         # if len(self.feature_pth['features']) >= 5000:
-        #     torch.save(self.feature_pth, '/home/wenbo/data/projects/Mask2Former_ConOcc/feature_map_no.pth')
+        #     torch.save(self.feature_pth, '/home/wenbo/data/projects/COCO-OLAC/feature_map_no.pth')
         #     print()
         outputs = self.sem_seg_head(features)
 

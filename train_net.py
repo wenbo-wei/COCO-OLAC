@@ -295,10 +295,10 @@ def setup(args):
     register_coco_dataset(val_dataset, 'val2017')
     cfg.DATASETS.TRAIN = ('train_30k_with_sem_seg',)
     cfg.DATASETS.TEST = ('custom',)
-    # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/Mask2Former_ConOcc/outputs/coco_30k_size512/res50/ref_size800_1333/base_50ep_39.7/model_final.pth'
-    cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/Mask2Former_ConOcc/outputs/model_final_94dc52.pkl'
+    # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/coco_30k_size512/res50/ref_size800_1333/base_50ep_39.7/model_final.pth'
+    cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/model_final_94dc52.pkl'
     cfg.CONTRASTIVE.ON = False
-    cfg.OUTPUT_DIR = '/home/wenbo/data/projects/Mask2Former_ConOcc/base'
+    cfg.OUTPUT_DIR = '/home/wenbo/data/projects/COCO-OLAC/base'
     cfg.INPUT.MAX_SIZE_TEST = 666
     cfg.INPUT.MIN_SIZE_TEST = 400
     cfg.freeze()

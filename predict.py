@@ -26,11 +26,11 @@ class Predictor:
         cfg.MODEL.MASK_FORMER.TEST.INSTANCE_ON = True
         cfg.MODEL.MASK_FORMER.TEST.PANOPTIC_ON = True
 
-        # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/Mask2Former_ConOcc/outputs/coco_30k_size512/res50/ref_size800_1333/con_3cl_out0.4_in0.6_40.1/model_final.pth'
+        # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/coco_30k_size512/res50/ref_size800_1333/con_3cl_out0.4_in0.6_40.1/model_final.pth'
         # cfg.CONTRASTIVE.ON = True
-        # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/Mask2Former_ConOcc/outputs/coco_30k_size512/res50/ref_size800_1333/base_50ep_39.7/model_final.pth'
+        # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/coco_30k_size512/res50/ref_size800_1333/base_50ep_39.7/model_final.pth'
         # cfg.CONTRASTIVE.ON = False
-        cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/Mask2Former_ConOcc/outputs/model_final_94dc52.pkl'
+        cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/model_final_94dc52.pkl'
         cfg.CONTRASTIVE.ON = False
 
         self.cfg = cfg
@@ -59,6 +59,6 @@ class Predictor:
 
 if __name__ == "__main__":
     image_predictor = Predictor()
-    im_dir = '/home/wenbo/data/datasets/coco_olac/val/val/000000036678.jpg'
+    im_dir = '/home/wenbo/data/datasets/coco_olac/val/000000036678.jpg'
     image_predictor.setup()
     image_predictor.predict(im_dir)
