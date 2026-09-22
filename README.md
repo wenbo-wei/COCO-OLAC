@@ -28,8 +28,7 @@
 
 ## News
 
-- [2026-05] Occlusion-level annotations and the contrastive learning baseline are released in this repository.
-- [2025] Paper published at **ICASSP 2025**.
+- [2025-04] Paper published at **ICASSP 2025**.
 
 ## Introduction
 
