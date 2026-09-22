@@ -51,8 +51,6 @@ To help address the occlusion problem in panoptic segmentation and image underst
 | Train | First 30,000 images of COCO `train2017`         | 30,000 | 6,668 | 11,251 | 12,081 |
 | Val   | Full COCO `val2017`                             | 5,000  | 1,134 | 2,075  | 1,791  |
 
-The validation set is additionally partitioned into three per-level subsets, so that any model may be evaluated independently on low-, mid-, and high-occlusion images.
-
 ## Download
 
 **Occlusion-level annotations** are distributed directly in this repository at the project root:
