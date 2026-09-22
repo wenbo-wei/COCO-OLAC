@@ -103,8 +103,6 @@ datasets/data/
 
 ## Leaderboard
 
-### Validation experiment
-
 Each method is evaluated using its **official pre-trained weights** on the per-level validation subsets (paper Table I).
 
 | Method            | Occlusion        | PQ                 | PQ<sup>Th</sup>    | PQ<sup>St</sup>    | AP<sub>pan</sub><sup>Th</sup> | mIoU<sub>pan</sub> |
