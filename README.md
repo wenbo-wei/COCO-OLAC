@@ -87,10 +87,10 @@ Levels follow the manual annotation protocol defined in the paper (Sec. II.A):
 
 ## Data Preparation
 
-Follow Mask2Former's dataset preparation [instructions](https://github.com/facebookresearch/Mask2Former/blob/main/datasets/README.md) to generate the required semantic and panoptic annotations in advance. Set `DETECTRON2_DATASETS=datasets/data` so that Detectron2 resolves dataset paths correctly. Place the dataset under `~/data/datasets/` and link `datasets/data` to that directory, following the structure below:
+Follow Mask2Former's dataset preparation [instructions](https://github.com/facebookresearch/Mask2Former/blob/main/datasets/README.md) to generate the required semantic and panoptic annotations in advance. Set `DETECTRON2_DATASETS=datasets/data` so that Detectron2 resolves dataset paths correctly. Place the dataset under `datasets/data/`, following the structure below:
 
 ```
-data/datasets/
+datasets/data/
   coco_olac/
     annotations/
       instances_{train,val,val_low,val_mid,val_high}.json
@@ -105,7 +105,7 @@ data/datasets/
 
 ### Validation experiment (paper Table I)
 
-Each method is evaluated using its **official pre-trained weights** on the per-level validation subsets; no fine-tuning on COCO-OLAC is performed.
+Each method is evaluated using its **official pre-trained weights** on the per-level validation subsets.
 
 | Method            | Occlusion        | PQ                 | PQ<sup>Th</sup>    | PQ<sup>St</sup>    | AP<sub>pan</sub><sup>Th</sup> | mIoU<sub>pan</sub> |
 |:------------------|:----------------:|:------------------:|:------------------:|:------------------:|:-----------------------------:|:------------------:|
