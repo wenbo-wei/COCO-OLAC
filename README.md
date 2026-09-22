@@ -104,18 +104,18 @@ Each method is evaluated using its **official pre-trained weights** on the per-l
 
 | Method            | Occlusion        | PQ                 | PQ<sup>Th</sup>    | PQ<sup>St</sup>    | AP<sub>pan</sub><sup>Th</sup> | mIoU<sub>pan</sub> |
 |:------------------|:----------------:|:------------------:|:------------------:|:------------------:|:-----------------------------:|:------------------:|
-| Panoptic FPN      | l/m/h            | 43.8&nbsp;/&nbsp;40.2&nbsp;/&nbsp;34.5 | 53.2&nbsp;/&nbsp;47.3&nbsp;/&nbsp;39.0 | 29.5&nbsp;/&nbsp;29.5&nbsp;/&nbsp;27.7 | —                             | —                  |
-| Panoptic FCN      | l/m/h            | 46.9&nbsp;/&nbsp;44.9&nbsp;/&nbsp;36.3 | 56.1&nbsp;/&nbsp;48.2&nbsp;/&nbsp;40.4 | 33.3&nbsp;/&nbsp;32.5&nbsp;/&nbsp;30.1 | —                             | —                  |
-| Panoptic DeepLab  | l/m/h            | 42.9&nbsp;/&nbsp;36.2&nbsp;/&nbsp;30.0 | 47.8&nbsp;/&nbsp;39.4&nbsp;/&nbsp;31.0 | 35.5&nbsp;/&nbsp;31.3&nbsp;/&nbsp;29.2 | —                             | —                  |
+| Panoptic&nbsp;FPN      | l/m/h            | 43.8&nbsp;/&nbsp;40.2&nbsp;/&nbsp;34.5 | 53.2&nbsp;/&nbsp;47.3&nbsp;/&nbsp;39.0 | 29.5&nbsp;/&nbsp;29.5&nbsp;/&nbsp;27.7 | —                             | —                  |
+| Panoptic&nbsp;FCN      | l/m/h            | 46.9&nbsp;/&nbsp;44.9&nbsp;/&nbsp;36.3 | 56.1&nbsp;/&nbsp;48.2&nbsp;/&nbsp;40.4 | 33.3&nbsp;/&nbsp;32.5&nbsp;/&nbsp;30.1 | —                             | —                  |
+| Panoptic&nbsp;DeepLab  | l/m/h            | 42.9&nbsp;/&nbsp;36.2&nbsp;/&nbsp;30.0 | 47.8&nbsp;/&nbsp;39.4&nbsp;/&nbsp;31.0 | 35.5&nbsp;/&nbsp;31.3&nbsp;/&nbsp;29.2 | —                             | —                  |
 | MaskFormer        | l/m/h            | 52.6&nbsp;/&nbsp;48.0&nbsp;/&nbsp;41.2 | 58.3&nbsp;/&nbsp;53.9&nbsp;/&nbsp;44.0 | 43.3&nbsp;/&nbsp;39.1&nbsp;/&nbsp;37.0 | —                             | —                  |
 | Mask2Former       | l/m/h            | 56.8&nbsp;/&nbsp;53.3&nbsp;/&nbsp;46.7 | 64.4&nbsp;/&nbsp;60.1&nbsp;/&nbsp;51.3 | 45.8&nbsp;/&nbsp;43.0&nbsp;/&nbsp;39.7 | 56.5&nbsp;/&nbsp;45.1&nbsp;/&nbsp;35.8            | 60.4&nbsp;/&nbsp;61.2&nbsp;/&nbsp;58.1 |
-| Mask DINO         | l/m/h            | 56.6&nbsp;/&nbsp;53.7&nbsp;/&nbsp;48.3 | 63.1&nbsp;/&nbsp;60.6&nbsp;/&nbsp;53.3 | 47.0&nbsp;/&nbsp;43.4&nbsp;/&nbsp;40.8 | 56.4&nbsp;/&nbsp;47.2&nbsp;/&nbsp;38.8            | 58.0&nbsp;/&nbsp;59.7&nbsp;/&nbsp;57.4 |
+| Mask&nbsp;DINO         | l/m/h            | 56.6&nbsp;/&nbsp;53.7&nbsp;/&nbsp;48.3 | 63.1&nbsp;/&nbsp;60.6&nbsp;/&nbsp;53.3 | 47.0&nbsp;/&nbsp;43.4&nbsp;/&nbsp;40.8 | 56.4&nbsp;/&nbsp;47.2&nbsp;/&nbsp;38.8            | 58.0&nbsp;/&nbsp;59.7&nbsp;/&nbsp;57.4 |
 
 **Note:** `l`, `m`, and `h` denote low, mid, and high occlusion levels, respectively.
 
 ## Citation
 
-If you find the COCO-OLAC dataset, the proposed evaluation protocol, or the reference implementation useful in your research, please cite our paper:
+If you find the COCO-OLAC dataset useful in your research, please cite our paper:
 
 <!-- TODO: replace with the final published reference once available -->
 
@@ -143,8 +143,4 @@ We thank the authors of these works for releasing their code and data.
 
 ## License
 
-<p align="center">
-The code in this repository is released under <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>.
-</p>
-
-The newly introduced occlusion-level annotations are released under **CC-BY 4.0**, consistent with the underlying COCO images. <!-- TODO: confirm CC-BY-4.0 is the intended license for the new labels -->
+The code in this repository is released under <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" align="absmiddle"></a>. The newly introduced occlusion-level annotations are released under **CC-BY 4.0**, consistent with the underlying COCO images. <!-- TODO: confirm CC-BY-4.0 is the intended license for the new labels -->
