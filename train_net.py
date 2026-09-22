@@ -285,22 +285,8 @@ def setup(args):
     # contrastive
     add_contrastive_config(cfg)
 
-    # cfg.merge_from_file(args.config_file)
-    # cfg.merge_from_list(args.opts)
-    cfg.merge_from_file('./configs/coco/panoptic-segmentation/maskformer2_R50_bs16_50ep.yaml')
-
-    train_dataset = '/home/wenbo/data/datasets/coco_olac/train'
-    val_dataset = '/home/wenbo/data/datasets/coco'
-    register_coco_dataset(train_dataset, 'train_30k')
-    register_coco_dataset(val_dataset, 'val2017')
-    cfg.DATASETS.TRAIN = ('train_30k_with_sem_seg',)
-    cfg.DATASETS.TEST = ('custom',)
-    # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/coco_30k_size512/res50/ref_size800_1333/base_50ep_39.7/model_final.pth'
-    cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/model_final_94dc52.pkl'
-    cfg.CONTRASTIVE.ON = False
-    cfg.OUTPUT_DIR = '/home/wenbo/data/projects/COCO-OLAC/base'
-    cfg.INPUT.MAX_SIZE_TEST = 666
-    cfg.INPUT.MIN_SIZE_TEST = 400
+    cfg.merge_from_file(args.config_file)
+    cfg.merge_from_list(args.opts)
     cfg.freeze()
     default_setup(cfg, args)
     # Setup logger for "mask_former" module
@@ -311,22 +297,25 @@ def setup(args):
 def main(args):
     cfg = setup(args)
 
-    # if args.eval_only:
-    if True:
-        model = Trainer.build_model(cfg)
-        DetectionCheckpointer(model, save_dir=cfg.OUTPUT_DIR).resume_or_load(
-            cfg.MODEL.WEIGHTS, resume=args.resume
-        )
-        res = Trainer.test(cfg, model)
-        if cfg.TEST.AUG.ENABLED:
-            res.update(Trainer.test_with_TTA(cfg, model))
-        if comm.is_main_process():
-            verify_results(cfg, res)
-        return res
+    try:
+        if args.eval_only:
+            model = Trainer.build_model(cfg)
+            DetectionCheckpointer(model, save_dir=cfg.OUTPUT_DIR).resume_or_load(
+                cfg.MODEL.WEIGHTS, resume=args.resume
+            )
+            res = Trainer.test(cfg, model)
+            if cfg.TEST.AUG.ENABLED:
+                res.update(Trainer.test_with_TTA(cfg, model))
+            if comm.is_main_process():
+                verify_results(cfg, res)
+            return res
 
-    trainer = Trainer(cfg)
-    trainer.resume_or_load(resume=args.resume)
-    return trainer.train()
+        trainer = Trainer(cfg)
+        trainer.resume_or_load(resume=args.resume)
+        return trainer.train()
+    finally:
+        if torch.distributed.is_available() and torch.distributed.is_initialized():
+            torch.distributed.destroy_process_group()
 
 
 if __name__ == "__main__":

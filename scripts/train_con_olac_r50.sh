@@ -4,8 +4,9 @@ export DETECTRON2_DATASETS=datasets/data
 python ./train_net.py \
 --num-gpus 2 \
 --config-file ./configs/coco_olac/panoptic-segmentation/maskformer2_R50_bs16_50ep.yaml \
-OUTPUT_DIR ./output/coco_olac/res50/con \
+OUTPUT_DIR ./output/res50/con/retraining \
 SEED 801 \
+TEST.EVAL_PERIOD 0 \
 DATALOADER.NUM_WORKERS 16 \
 SOLVER.IMS_PER_BATCH 32 \
 SOLVER.STEPS '42084, 44422' \

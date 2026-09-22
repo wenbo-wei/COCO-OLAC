@@ -24,7 +24,7 @@ def _coco_olac_paths(split):
 
 
 # All datasets registered by this module. Regular splits are derived from
-# _COCO_OLAC_SPLITS. "custom" is omitted: ConOcc already registers it via
+# _COCO_OLAC_SPLITS. "custom" is omitted: the contrastive module already registers it via
 # register_custom_panoptic.py.
 _PREDEFINED_SPLITS = {
     **{f"coco_olac_{s}": _coco_olac_paths(s) for s in _COCO_OLAC_SPLITS},

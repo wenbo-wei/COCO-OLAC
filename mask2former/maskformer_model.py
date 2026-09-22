@@ -49,7 +49,7 @@ class MaskFormer(nn.Module):
             test_topk_per_image: int,
             # contrastive
             contrastive_on,
-            # occlusion_ann,
+            occlusion_ann,
             con_embedding_layer,
             ignore_occlusion_label,
             outer_threshold,
@@ -112,9 +112,9 @@ class MaskFormer(nn.Module):
         self.feature_pth = {'features': [], 'occlusion_label': []}
         if self.contrastive_on:
             self.label_mapping = {'low': 0, 'mid': 1, 'high': 2}
-            # self.occlusion_ann = occlusion_ann
-            # with open(self.occlusion_ann, 'r') as oa:
-            #     self.occlusion_labels = json.load(oa)
+            self.occlusion_ann = occlusion_ann
+            with open(self.occlusion_ann, 'r') as oa:
+                self.occlusion_labels = json.load(oa)
             self.con_embedding_layer = con_embedding_layer
             self.ignore_occlusion_label = ignore_occlusion_label
             self.outer_threshold = outer_threshold
@@ -199,7 +199,7 @@ class MaskFormer(nn.Module):
             "test_topk_per_image": cfg.TEST.DETECTIONS_PER_IMAGE,
             # contrastive
             "contrastive_on": cfg.CONTRASTIVE.ON,
-            # "occlusion_ann": cfg.CONTRASTIVE.OCCLUSION_ANN,
+            "occlusion_ann": cfg.CONTRASTIVE.OCCLUSION_ANN,
             "con_embedding_layer": cfg.CONTRASTIVE.EMBEDDING_LAYER,
             "ignore_occlusion_label": cfg.CONTRASTIVE.IGNORE_OCCLUSION_LABEL,
             "outer_threshold": cfg.CONTRASTIVE.OUTER_THRESHOLD,

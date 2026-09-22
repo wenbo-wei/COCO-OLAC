@@ -20,17 +20,17 @@ class Predictor:
         add_deeplab_config(cfg)
         add_maskformer2_config(cfg)
         add_contrastive_config(cfg)
-        cfg.merge_from_file("./configs/coco/panoptic-segmentation/maskformer2_R50_bs16_50ep.yaml")
+        cfg.merge_from_file("./configs/coco_olac/panoptic-segmentation/maskformer2_R50_bs16_50ep.yaml")
         # cfg.MODEL.WEIGHTS = './model_zoo/coco_r50.pkl'
         cfg.MODEL.MASK_FORMER.TEST.SEMANTIC_ON = True
         cfg.MODEL.MASK_FORMER.TEST.INSTANCE_ON = True
         cfg.MODEL.MASK_FORMER.TEST.PANOPTIC_ON = True
 
-        # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/coco_30k_size512/res50/ref_size800_1333/con_3cl_out0.4_in0.6_40.1/model_final.pth'
+        # cfg.MODEL.WEIGHTS = './output/res50/con/model_final.pth'
         # cfg.CONTRASTIVE.ON = True
-        # cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/coco_30k_size512/res50/ref_size800_1333/base_50ep_39.7/model_final.pth'
+        # cfg.MODEL.WEIGHTS = './output/res50/base/model_final.pth'
         # cfg.CONTRASTIVE.ON = False
-        cfg.MODEL.WEIGHTS = '/home/wenbo/data/projects/COCO-OLAC/outputs/model_final_94dc52.pkl'
+        cfg.MODEL.WEIGHTS = './model_zoo/coco_r50.pkl'
         cfg.CONTRASTIVE.ON = False
 
         self.cfg = cfg
