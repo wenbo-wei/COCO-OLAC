@@ -19,7 +19,7 @@
 - [Statistics](#statistics)
 - [Download](#download)
 - [Annotation Format](#annotation-format)
-- [Benchmark Protocol](#benchmark-protocol)
+- [Data Preparation](#data-preparation)
 - [Leaderboard](#leaderboard)
 - [Installation](#installation)
 - [Training](#training)
@@ -85,44 +85,21 @@ Levels follow the manual annotation protocol defined in the paper (Sec. II.A):
 | `mid`  | 0–50%                 | Partial occlusion of one or more foreground objects   |
 | `high` | 50–100%               | Severe occlusion of at least one foreground object    |
 
-## Benchmark Protocol
+## Data Preparation
 
-### Data preparation
-
-Place the data under `datasets/data/`:
+Follow Mask2Former's dataset preparation [instructions](https://github.com/facebookresearch/Mask2Former/blob/main/datasets/README.md) to generate the required semantic and panoptic annotations in advance. Set `DETECTRON2_DATASETS=datasets/data` so that Detectron2 resolves dataset paths correctly. Place the dataset under `~/data/datasets/` and link `datasets/data` to that directory, following the structure below:
 
 ```
-datasets/data/
-└── coco_olac/
-    ├── train/                                    # first 30k images of COCO train2017
-    ├── val/, val_low/, val_mid/, val_high/        # full validation set and per-level subsets
-    ├── panoptic_{train,val,val_low,val_mid,val_high}/
-    ├── panoptic_semseg_{train,val,val_low,val_mid,val_high}/
-    ├── annotations/
-    │   ├── instances_{train,val,val_low,val_mid,val_high}.json
-    │   └── panoptic_{train,val,val_low,val_mid,val_high}.json
-    └── occlusion_label_{train,val,val_low,val_mid,val_high}.json
+data/datasets/
+  coco_olac/
+    annotations/
+      instances_{train,val,val_low,val_mid,val_high}.json
+      panoptic_{train,val,val_low,val_mid,val_high}.json
+    {train,val,val_low,val_mid,val_high}/  # RGB images
+    panoptic_{train,val,val_low,val_mid,val_high}/
+    panoptic_semseg_{train,val,val_low,val_mid,val_high}/
+    occlusion_label_{train,val,val_low,val_mid,val_high}.json
 ```
-
-The split image and mask directories share one dataset root; all instance and
-panoptic JSONs share `annotations/`. Braces denote separate names.
-
-### Evaluation splits
-
-Models are reported on the following partitions of the validation set:
-
-- **Full val** (5,000 images) — overall metric.
-- **Val-Low** (1,134), **Val-Mid** (2,075), and **Val-High** (1,791) — per-level subsets.
-
-### Metrics
-
-Standard panoptic metrics are reported throughout:
-
-- **PQ** — Panoptic Quality, reported as overall, *thing*, and *stuff* variants.
-- **AP<sub>pan</sub><sup>Th</sup>** — instance AP derived from panoptic predictions on *thing* classes.
-- **mIoU<sub>pan</sub>** — semantic mean IoU derived from panoptic predictions.
-
-The corresponding evaluation utilities are provided at `tools/evaluate_pq_for_semantic_segmentation.py` and `tools/evaluate_coco_boundary_ap.py`.
 
 ## Leaderboard
 
