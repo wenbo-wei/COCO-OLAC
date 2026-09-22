@@ -64,7 +64,7 @@ To help address the occlusion problem in panoptic segmentation and image underst
 
 ## Annotation Format
 
-Each file `occlusion_label_{train,val}.json` is a single JSON object that maps a COCO `image_id` (zero-padded to 12 digits, encoded as a string) to one of the three occlusion levels:
+Each annotation file is a single JSON object that maps a COCO `image_id` (zero-padded to 12 digits, encoded as a string) to one of the three occlusion levels:
 
 ```json
 {
