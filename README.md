@@ -11,11 +11,11 @@
 
 </div>
 
----
-
 ## Table of Contents
 
+- [News](#news)
 - [Introduction](#introduction)
+- [Highlights](#highlights)
 - [Statistics](#statistics)
 - [Download](#download)
 - [Annotation Format](#annotation-format)
@@ -26,11 +26,23 @@
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
+## News
+
+- [2026-05] Occlusion-level annotations and the contrastive learning baseline are released in this repository.
+- [2025] Paper published at **ICASSP 2025**.
+
 ## Introduction
 
 <p align="justify">
 To help address the occlusion problem in panoptic segmentation and image understanding, this paper proposes a new large-scale dataset named COCO-OLAC (COCO Occlusion Labels for All Computer Vision Tasks), which is derived from the COCO dataset by manually labelling images into three perceived occlusion levels. Using COCO-OLAC, we systematically assess and quantify the impact of occlusion on panoptic segmentation on samples having different levels of occlusion. Comparative experiments with SOTA panoptic models demonstrate that the presence of occlusion significantly affects performance, with higher occlusion levels resulting in notably poorer performance. Additionally, we propose a straightforward yet effective method as an initial attempt to leverage the occlusion annotation using contrastive learning to render a model that learns a more robust representation capturing different severities of occlusion. Experimental results demonstrate that the proposed approach boosts the performance of the baseline model and achieves SOTA performance on the proposed COCO-OLAC dataset.
 </p>
+
+## Highlights
+
+- **Occlusion-level annotations.** 35,000 COCO images are manually labelled into three perceived occlusion levels: low, mid, and high.
+- **Fine-grained evaluation.** Per-level validation subsets support robustness analysis across different occlusion severities.
+- **Unified benchmark.** Six representative panoptic segmentation models are evaluated under a common protocol, revealing consistent performance degradation as occlusion increases.
+- **Occlusion-aware baseline.** A contrastive learning baseline uses the occlusion labels to learn more robust feature representations.
 
 ## Statistics
 
