@@ -13,17 +13,9 @@
 
 ---
 
-## Overview
-
-COCO-OLAC is released as a benchmark for the diagnostic evaluation of panoptic segmentation under realistic occlusion. The labels, splits, and evaluation protocol form the primary deliverable; the included reference implementation is provided to demonstrate that the new annotations are useful as a training signal.
-
-- **Three perceived occlusion levels** are manually annotated on COCO images, defined by the occluded-region ratio: low (0%), mid (0–50%), and high (50–100%).
-- **Per-level validation subsets** support fine-grained robustness analysis of any panoptic, detection, or segmentation model.
-- **Six panoptic baselines are benchmarked** under a unified protocol — Panoptic FPN/FCN/DeepLab, MaskFormer, Mask2Former, and Mask DINO — revealing a consistent drop in PQ as occlusion severity rises.
-- **An occlusion-aware contrastive learning baseline** is provided as a reference implementation.
-
 ## Table of Contents
 
+- [Introduction](#introduction)
 - [Statistics](#statistics)
 - [Download](#download)
 - [Annotation Format](#annotation-format)
@@ -33,6 +25,12 @@ COCO-OLAC is released as a benchmark for the diagnostic evaluation of panoptic s
 - [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
+
+## Introduction
+
+<p align="justify">
+To help address the occlusion problem in panoptic segmentation and image understanding, this paper proposes a new large-scale dataset named COCO-OLAC (COCO Occlusion Labels for All Computer Vision Tasks), which is derived from the COCO dataset by manually labelling images into three perceived occlusion levels. Using COCO-OLAC, we systematically assess and quantify the impact of occlusion on panoptic segmentation on samples having different levels of occlusion. Comparative experiments with SOTA panoptic models demonstrate that the presence of occlusion significantly affects performance, with higher occlusion levels resulting in notably poorer performance. Additionally, we propose a straightforward yet effective method as an initial attempt to leverage the occlusion annotation using contrastive learning to render a model that learns a more robust representation capturing different severities of occlusion. Experimental results demonstrate that the proposed approach boosts the performance of the baseline model and achieves SOTA performance on the proposed COCO-OLAC dataset.
+</p>
 
 ## Statistics
 
