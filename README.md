@@ -21,7 +21,9 @@
 - [Annotation Format](#annotation-format)
 - [Benchmark Protocol](#benchmark-protocol)
 - [Leaderboard](#leaderboard)
-- [Reference Implementation](#reference-implementation-contrastive-learning-on-occlusion-levels)
+- [Installation](#installation)
+- [Training](#training)
+- [Evaluation](#evaluation)
 - [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -143,24 +145,7 @@ Each method is evaluated using its **official pre-trained weights** on the per-l
 | Mask2Former       | l/m/h            | 56.8 / 53.3 / 46.7 | 64.4 / 60.1 / 51.3 | 45.8 / 43.0 / 39.7 | 56.5 / 45.1 / 35.8            | 60.4 / 61.2 / 58.1 |
 | Mask DINO         | l/m/h            | 56.6 / 53.7 / 48.3 | 63.1 / 60.6 / 53.3 | 47.0 / 43.4 / 40.8 | 56.4 / 47.2 / 38.8            | 58.0 / 59.7 / 57.4 |
 
-## Reference Implementation: Contrastive Learning on Occlusion Levels
-
-In addition to the benchmark, we release a simple baseline that **uses the occlusion labels at training time**. A triplet contrastive loss is applied in the backbone feature space, pulling together representations of images at the same occlusion level and pushing apart those at different levels.
-
-<p align="center"><img src="assets/architecture.png" width="700" alt="Contrastive baseline pipeline"></p>
-
-Per-level improvements over the retrained Mask2Former baseline (paper Table III):
-
-| Occlusion | Model    | PQ              | PQ<sup>Th</sup> | PQ<sup>St</sup> | AP<sub>pan</sub><sup>Th</sup> | mIoU<sub>pan</sub> |
-|:---------:|:---------|:---------------:|:---------------:|:---------------:|:-----------------------------:|:------------------:|
-| Low       | Baseline | 47.5            | 53.5            | 38.5            | 46.7                          | 52.2               |
-|           | Ours     | **48.1** (+0.6) | 53.1            | **40.8** (+2.3) | 46.4                          | **54.0** (+0.5)    |
-| Mid       | Baseline | 43.1            | 48.1            | 35.6            | 33.3                          | 54.0               |
-|           | Ours     | **43.2**        | 47.9            | **36.1** (+0.5) | **33.7** (+0.4)               | 54.0               |
-| High      | Baseline | 35.7            | 38.2            | 32.0            | 24.8                          | 50.7               |
-|           | Ours     | **36.1** (+0.4) | 38.2            | **33.0** (+1.0) | 24.7                          | **50.8**           |
-
-### Installation
+## Installation
 
 The implementation builds on **Mask2Former** (Meta, MIT) and **detectron2**. Please follow the upstream [Mask2Former installation guide](https://github.com/facebookresearch/Mask2Former/blob/main/INSTALL.md) for the heavy dependencies (PyTorch, detectron2, the MSDeformAttn CUDA operator), and then install the remaining requirements:
 
@@ -170,7 +155,7 @@ pip install -r requirements.txt
 
 <!-- TODO: write install_env.sh once env is pinned -->
 
-### Training
+## Training
 
 ```bash
 bash scripts/train_conocc_olac_r50.sh
@@ -178,7 +163,7 @@ bash scripts/train_conocc_olac_r50.sh
 
 This launches `train_net.py` with `configs/coco_olac/panoptic-segmentation/maskformer2_R50_bs16_50ep.yaml` and the contrastive hyper-parameters specified in the paper (margins τ<sub>l,h</sub>=0.4, τ<sub>m</sub>=0.6, λ=1.0).
 
-### Evaluation
+## Evaluation
 
 ```bash
 bash scripts/eval_conocc_olac_r50.sh
