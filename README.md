@@ -56,13 +56,13 @@ To help address the occlusion problem in panoptic segmentation and image underst
 
 **Occlusion-level annotations** are distributed directly in this repository at the project root:
 
-| File                              | Size   | Contents                                                       |
-|:----------------------------------|:------:|:---------------------------------------------------------------|
-| `occlusion_label_train.json`      | 802 KB | 30,000 training images, three-level labels                     |
-| `occlusion_label_val.json`        | 114 KB | 5,000 validation images, three-level labels                    |
-| `occlusion_label_val_low.json`    | 30 KB  | low occlusion subset (1,134 images)                            |
-| `occlusion_label_val_mid.json`    | 55 KB  | mid occlusion subset (2,075 images)                            |
-| `occlusion_label_val_high.json`   | 49 KB  | high occlusion subset (1,791 images)                           |
+| File | Size | Download |
+|:-----|:----:|:--------:|
+| `occlusion_label_train.json` | 802 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_train.json) |
+| `occlusion_label_val.json` | 114 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val.json) |
+| `occlusion_label_val_low.json` | 30 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val_low.json) |
+| `occlusion_label_val_mid.json` | 55 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val_mid.json) |
+| `occlusion_label_val_high.json` | 49 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val_high.json) |
 
 **Images and panoptic masks** are *not* redistributed. Please obtain the official **COCO 2017** images and panoptic annotations from <https://cocodataset.org/#download> and place them under `datasets/data/coco_olac/` as described in [Data preparation](#data-preparation).
 
