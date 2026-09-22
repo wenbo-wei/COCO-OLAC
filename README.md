@@ -4,7 +4,7 @@
 
 [Wenbo Wei](https://github.com/wenbo-wei), [Jun Wang](https://github.com/Markin-Wang), [Abhir Bhalerao](https://scholar.google.com/citations?hl=en&user=XfBoSP4AAAAJ)
 
-[![Conference](https://img.shields.io/badge/ICASSP-2025-blue.svg)](#citation)
+[![Conference](https://img.shields.io/badge/ICASSP-2025-blue.svg)](https://arxiv.org/abs/2409.12760)
 [![Dataset](https://img.shields.io/badge/Dataset-COCO--OLAC-orange.svg)](#download)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Annotations](https://img.shields.io/badge/Annotations-CC--BY--4.0-green.svg)](#license)
@@ -124,12 +124,12 @@ Each method is evaluated using its **official pre-trained weights** on the per-l
 
 | Method            | Occlusion        | PQ                 | PQ<sup>Th</sup>    | PQ<sup>St</sup>    | AP<sub>pan</sub><sup>Th</sup> | mIoU<sub>pan</sub> |
 |:------------------|:----------------:|:------------------:|:------------------:|:------------------:|:-----------------------------:|:------------------:|
-| Panoptic FPN      | low / mid / high | 43.8 / 40.2 / 34.5 | 53.2 / 47.3 / 39.0 | 29.5 / 29.5 / 27.7 | —                             | —                  |
-| Panoptic FCN      | low / mid / high | 46.9 / 44.9 / 36.3 | 56.1 / 48.2 / 40.4 | 33.3 / 32.5 / 30.1 | —                             | —                  |
-| Panoptic DeepLab  | low / mid / high | 42.9 / 36.2 / 30.0 | 47.8 / 39.4 / 31.0 | 35.5 / 31.3 / 29.2 | —                             | —                  |
-| MaskFormer        | low / mid / high | 52.6 / 48.0 / 41.2 | 58.3 / 53.9 / 44.0 | 43.3 / 39.1 / 37.0 | —                             | —                  |
-| Mask2Former       | low / mid / high | 56.8 / 53.3 / 46.7 | 64.4 / 60.1 / 51.3 | 45.8 / 43.0 / 39.7 | 56.5 / 45.1 / 35.8            | 60.4 / 61.2 / 58.1 |
-| Mask DINO         | low / mid / high | 56.6 / 53.7 / 48.3 | 63.1 / 60.6 / 53.3 | 47.0 / 43.4 / 40.8 | 56.4 / 47.2 / 38.8            | 58.0 / 59.7 / 57.4 |
+| Panoptic FPN      | l/m/h            | 43.8 / 40.2 / 34.5 | 53.2 / 47.3 / 39.0 | 29.5 / 29.5 / 27.7 | —                             | —                  |
+| Panoptic FCN      | l/m/h            | 46.9 / 44.9 / 36.3 | 56.1 / 48.2 / 40.4 | 33.3 / 32.5 / 30.1 | —                             | —                  |
+| Panoptic DeepLab  | l/m/h            | 42.9 / 36.2 / 30.0 | 47.8 / 39.4 / 31.0 | 35.5 / 31.3 / 29.2 | —                             | —                  |
+| MaskFormer        | l/m/h            | 52.6 / 48.0 / 41.2 | 58.3 / 53.9 / 44.0 | 43.3 / 39.1 / 37.0 | —                             | —                  |
+| Mask2Former       | l/m/h            | 56.8 / 53.3 / 46.7 | 64.4 / 60.1 / 51.3 | 45.8 / 43.0 / 39.7 | 56.5 / 45.1 / 35.8            | 60.4 / 61.2 / 58.1 |
+| Mask DINO         | l/m/h            | 56.6 / 53.7 / 48.3 | 63.1 / 60.6 / 53.3 | 47.0 / 43.4 / 40.8 | 56.4 / 47.2 / 38.8            | 58.0 / 59.7 / 57.4 |
 
 **Observation.** PQ decreases monotonically from low to high occlusion across every method, confirming that the manual annotation captures a meaningful difficulty signal.
 
