@@ -54,8 +54,6 @@ To help address the occlusion problem in panoptic segmentation and image underst
 
 ## Download
 
-**Occlusion-level annotations** are available as [GitHub Release assets](https://github.com/wenbo-wei/COCO-OLAC/releases/tag/annotations-v1.0). Download the five JSON files below into `datasets/data/coco_olac/`:
-
 | File | Size | Download |
 |:-----|:----:|:--------:|
 | `occlusion_label_train.json` | 802 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_train.json) |
@@ -63,8 +61,6 @@ To help address the occlusion problem in panoptic segmentation and image underst
 | `occlusion_label_val_low.json` | 30 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val_low.json) |
 | `occlusion_label_val_mid.json` | 55 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val_mid.json) |
 | `occlusion_label_val_high.json` | 49 KB | [Download](https://github.com/wenbo-wei/COCO-OLAC/releases/download/annotations-v1.0/occlusion_label_val_high.json) |
-
-**Images and panoptic masks** are *not* redistributed. Please obtain the official **COCO 2017** images and panoptic annotations from <https://cocodataset.org/#download> and place them under `datasets/data/coco_olac/` as described in [Data preparation](#data-preparation).
 
 ## Annotation Format
 
