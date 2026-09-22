@@ -4,10 +4,10 @@
 
 [Wenbo Wei](https://github.com/wenbo-wei), [Jun Wang](https://github.com/Markin-Wang), [Abhir Bhalerao](https://scholar.google.com/citations?hl=en&user=XfBoSP4AAAAJ)
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Annotations](https://img.shields.io/badge/Annotations-CC--BY--4.0-green.svg)](#license)
 [![Conference](https://img.shields.io/badge/ICASSP-2025-blue.svg)](#citation)
 [![Dataset](https://img.shields.io/badge/Dataset-COCO--OLAC-orange.svg)](#download)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Annotations](https://img.shields.io/badge/Annotations-CC--BY--4.0-green.svg)](#license)
 
 </div>
 
