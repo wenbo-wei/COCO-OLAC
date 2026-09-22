@@ -89,8 +89,6 @@ Levels follow the manual annotation protocol defined in the paper (Sec. II.A):
 | `mid`  | 0–50%                 | Partial occlusion of one or more foreground objects   |
 | `high` | 50–100%               | Severe occlusion of at least one foreground object    |
 
-A reference script for regenerating and splitting the labels is provided at `tools/create_eval_occl_label.py`.
-
 ## Benchmark Protocol
 
 ### Data preparation
